@@ -1,2 +1,1 @@
-# ng-digital-clock
-Angular Digital Clock
+# Angular Digital Clock
