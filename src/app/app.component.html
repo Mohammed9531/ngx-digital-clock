@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<div id="clock" class="light">
+    <div class="display">
+        <div class="weekdays"></div>
+        <div class="ampm"></div>
+        <div class="alarm"></div>
+        <div class="digits">
+            <app-digit [digit]="'zero'"></app-digit>
+            <app-digit [digit]="'two'"></app-digit>
+            <div class="dots"></div>
+            <app-digit [digit]="'zero'"></app-digit>
+            <app-digit [digit]="'two'"></app-digit>
+            <div class="dots"></div>
+            <app-digit [digit]="'zero'"></app-digit>
+            <app-digit [digit]="'two'"></app-digit>
+        </div>
+    </div>
+</div>
