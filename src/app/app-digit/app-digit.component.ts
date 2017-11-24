@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Observable, Subscription } from 'rxjs/Rx';
+import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-digit',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./app-digit.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppDigitComponent implements OnInit {
+export class AppDigitComponent implements OnInit, OnDestroy {
 
   @Input()
   public isDot: boolean;
@@ -15,6 +16,8 @@ export class AppDigitComponent implements OnInit {
   public digit: string;
 
   public displayDots: boolean;
+
+  public subscriptions: Subscription[] = [];
 
   public borders: string[] = 'd1 d2 d3 d4 d5 d6 d7'.split(' ');
 
@@ -29,9 +32,19 @@ export class AppDigitComponent implements OnInit {
   public triggerToggling(): void {
     this.displayDots = false;
 
-    setInterval(() => {
-      this.displayDots = !this.displayDots;
-    }, 1000)
+    this.subscriptions.push(
+      Observable.timer(0, 1000)
+      .subscribe((t) => {
+        this.displayDots = !this.displayDots;
+      })
+    );
   }
 
+  public ngOnDestroy(): void {
+    for (let subscription of this.subscriptions) {
+      if (!!subscription) {
+        subscription.unsubscribe();
+      }
+    }
+  }
 }
