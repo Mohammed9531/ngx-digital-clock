@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppDigitComponent } from './app-digit/app-digit.component';
+import { AppWatchComponent } from './app-watch/app-watch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppDigitComponent
+    AppDigitComponent,
+    AppWatchComponent
   ],
   imports: [
     BrowserModule,
