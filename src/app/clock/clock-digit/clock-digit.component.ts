@@ -1,13 +1,12 @@
 import { Observable, Subscription } from 'rxjs/Rx';
-import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-digit',
-  templateUrl: './digit.component.html',
-  styleUrls: ['./digit.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'clock-digit',
+  templateUrl: './clock-digit.component.html',
+  styleUrls: ['./clock-digit.component.scss']
 })
-export class DigitComponent implements OnInit, OnDestroy {
+export class ClockDigitComponent implements OnInit {
 
   @Input()
   public isDot: boolean;

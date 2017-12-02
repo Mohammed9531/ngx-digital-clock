@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DAYS_SHORT, DAYS_LONG } from './../../app.constants';
 
 @Component({
-  selector: 'app-day',
-  templateUrl: './app-day.component.html',
-  styleUrls: ['./app-day.component.scss']
+  selector: 'clock-day',
+  templateUrl: './clock-day.component.html',
+  styleUrls: ['./clock-day.component.scss']
 })
-export class AppDayComponent implements OnInit {
+export class ClockDayComponent implements OnInit {
 
   @Input()
   public today: string;

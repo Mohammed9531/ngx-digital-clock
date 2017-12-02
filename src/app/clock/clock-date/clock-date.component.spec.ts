@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DigitComponent } from './digit.component';
+import { ClockDateComponent } from './clock-date.component';
 
-describe('DigitComponent', () => {
-  let component: DigitComponent;
-  let fixture: ComponentFixture<DigitComponent>;
+describe('ClockDateComponent', () => {
+  let component: ClockDateComponent;
+  let fixture: ComponentFixture<ClockDateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DigitComponent ]
+      declarations: [ ClockDateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DigitComponent);
+    fixture = TestBed.createComponent(ClockDateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
