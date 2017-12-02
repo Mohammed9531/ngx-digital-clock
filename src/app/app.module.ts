@@ -6,28 +6,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ClockComponent } from './clock/clock.component';
 import { AnalogComponent } from './analog/analog.component';
-import { AppDayComponent } from './app-day/app-day.component';
 import { DigitalComponent } from './digital/digital.component';
-import { AppDigitComponent } from './app-digit/app-digit.component';
-import { AppWatchComponent } from './app-watch/app-watch.component';
+import { ClockDayComponent } from './clock/clock-day/clock-day.component';
+import { ClockDateComponent } from './clock/clock-date/clock-date.component';
+import { ClockDigitComponent } from './clock/clock-digit/clock-digit.component';
+import { ClockPeriodComponent } from './clock/clock-period/clock-period.component';
 
+import { ClockServiceService } from './shared/clock-service/clock.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppDigitComponent,
-    AppWatchComponent,
-    AppDayComponent,
-    DigitalComponent,
+    ClockComponent,
     AnalogComponent,
-    ClockComponent
+    DigitalComponent,
+    ClockDayComponent,
+    ClockDateComponent,
+    ClockDigitComponent,
+    ClockPeriodComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ClockServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

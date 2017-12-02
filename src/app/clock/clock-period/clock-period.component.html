@@ -1,3 +1,6 @@
-<p>
-  clock-period works!
-</p>
+<ul class="periods-block">
+  <li class="period period-{{period | lowercase}}" 
+    *ngFor="let period of ['AM', 'PM']" 
+    [class.active]="period == ''">{{period}}
+  </li>
+</ul>

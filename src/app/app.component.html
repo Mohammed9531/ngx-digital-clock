@@ -1,12 +1,12 @@
 <div id="clock" class="light">
     <div class="display">
         <div class="weekdays">
-            <app-day [today]="dateTimeObj.day_numerical"></app-day>
+            <clock-day [today]="dateTimeObj.day_numerical"></clock-day>
         </div>
         <div class="ampm"></div>
         <div class="alarm"></div>
         <div class="digits">
-            <app-digit *ngFor="let dName of timeFormatList" [digitName]="dName" [isDot]="dName === 'dots'"></app-digit>
+            <clock-digit *ngFor="let dName of timeFormatList" [digitName]="dName" [isDot]="dName === 'dots'"></clock-digit>
         </div>
     </div>
 </div>
