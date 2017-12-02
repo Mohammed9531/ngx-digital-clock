@@ -13,7 +13,7 @@ export class AppDigitComponent implements OnInit, OnDestroy {
   public isDot: boolean;
 
   @Input()
-  public digit: string;
+  public digitName: string;
 
   public displayDots: boolean;
 

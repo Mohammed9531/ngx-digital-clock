@@ -1,17 +1,12 @@
 <div id="clock" class="light">
     <div class="display">
-        <div class="weekdays"></div>
+        <div class="weekdays">
+            <app-day [today]="dateTimeObj.day_numerical"></app-day>
+        </div>
         <div class="ampm"></div>
         <div class="alarm"></div>
         <div class="digits">
-            <app-digit [digit]="'zero'" [isDot]=""></app-digit>
-            <app-digit [digit]="'two'" [isDot]=""></app-digit>
-            <app-digit [isDot]="true"></app-digit>
-            <app-digit [digit]="'zero'" [isDot]=""></app-digit>
-            <app-digit [digit]="'two'" [isDot]=""></app-digit>
-            <app-digit [isDot]="true"></app-digit>
-            <app-digit [digit]="'zero'" [isDot]=""></app-digit>
-            <app-digit [digit]="'two'" [isDot]=""></app-digit>
+            <app-digit *ngFor="let dName of timeFormatList" [digitName]="dName" [isDot]="dName === 'dots'"></app-digit>
         </div>
     </div>
 </div>

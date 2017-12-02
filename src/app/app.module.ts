@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppDigitComponent } from './app-digit/app-digit.component';
 import { AppWatchComponent } from './app-watch/app-watch.component';
+import { AppDayComponent } from './app-day/app-day.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppDigitComponent,
-    AppWatchComponent
+    AppWatchComponent,
+    AppDayComponent
   ],
   imports: [
     BrowserModule,
