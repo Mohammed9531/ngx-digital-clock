@@ -1,0 +1,13 @@
+.weekdays-block {
+    > .day-block {
+        opacity: 0.3;
+        padding: 0 10px;
+        display: inline-block;
+        list-style-type: none;
+
+        &.active {
+            opacity: 1;
+            font-weight: bold;
+        }
+    }
+}

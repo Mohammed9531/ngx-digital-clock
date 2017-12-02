@@ -1,0 +1,4 @@
+<div class="dots" *ngIf="digitName == 'dots'" [style.visibility] = "!displayDots ? 'visible': 'hidden'"></div>
+<div [attr.class]="digitName? digitName: ''" *ngIf="digitName != 'dots'">
+  <span *ngFor="let border of borders" [attr.class]="border"></span>
+</div>
