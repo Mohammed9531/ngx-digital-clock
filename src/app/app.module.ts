@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ClockComponent } from './clock/clock.component';
-import { AnalogComponent } from './analog/analog.component';
 import { ClockDayComponent } from './clock/clock-day/clock-day.component';
 import { ClockDateComponent } from './clock/clock-date/clock-date.component';
 import { ClockDigitComponent } from './clock/clock-digit/clock-digit.component';
@@ -15,7 +14,6 @@ import { ClockPeriodComponent } from './clock/clock-period/clock-period.componen
   declarations: [
     AppComponent,
     ClockComponent,
-    AnalogComponent,
     ClockDayComponent,
     ClockDateComponent,
     ClockDigitComponent,
