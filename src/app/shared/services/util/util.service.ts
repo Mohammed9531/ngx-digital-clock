@@ -11,6 +11,12 @@ export class UtilService {
    */
   constructor() { }
 
+  /**
+   * @public
+   * @return: string
+   * @description: a helper method that prepends
+   * `0` to the single digit.
+   */
   public to2Digit(str: string): string {
     if (!str) { return null; }
 

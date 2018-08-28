@@ -44,32 +44,6 @@ const CLASS_LIST = {
 };
 
 /**
- * @constant
- */
-const WATCH_CONFIG = {
-    format: 'MMM MMMM Do YY YYYY ddd dddd hh mm ss d A hh:mm:ss',
-    keys: [
-          'month_short'
-        , 'month_long'
-        , 'date_roman'
-        , 'year_short'
-        , 'year_long'
-        , 'day_short'
-        , 'day_long'
-        , 'hours'
-        , 'minutes'
-        , 'seconds'
-        , 'day_numerical'
-        , 'period'
-        , 'time'
-    ],
-    parsers: {
-          ':' : 'dots'
-        , 'dots': ':'
-    }
-};
-
-/**
  * @exports
  */
-export { WATCH_CONFIG, CLASS_LIST, DAYS_LONG, DAYS_SHORT };
+export { CLASS_LIST, DAYS_LONG, DAYS_SHORT };

@@ -1,31 +1,24 @@
-import { UtilService } from './shared/services/util/util.service';
+// Modules
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Components
 import { AppComponent } from './app.component';
-import { ClockComponent } from './clock/clock.component';
-import { ClockDayComponent } from './clock/clock-day/clock-day.component';
-import { ClockDateComponent } from './clock/clock-date/clock-date.component';
-import { ClockDigitComponent } from './clock/clock-digit/clock-digit.component';
-import { ClockPeriodComponent } from './clock/clock-period/clock-period.component';
 import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 
+// Services
+import { UtilService } from './shared/services/util/util.service';
+
+/**
+ * @author: Shoukath Mohammed
+ */
 @NgModule({
   declarations: [
-    AppComponent,
-    ClockComponent,
-    ClockDayComponent,
-    ClockDateComponent,
-    ClockDigitComponent,
-    ClockPeriodComponent,
-    DigitalClockComponent
+    AppComponent
+    , DigitalClockComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
+    BrowserModule
   ],
   providers: [UtilService],
   bootstrap: [AppComponent]
