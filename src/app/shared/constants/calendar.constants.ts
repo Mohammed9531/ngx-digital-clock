@@ -1,7 +1,8 @@
 /**
  * @author: Shoukath Mohammed
+ * @constant
  */
-export const DAYS_SHORT = [
+const DAYS_SHORT = [
       'MON'
     , 'TUE'
     , 'WED'
@@ -11,7 +12,10 @@ export const DAYS_SHORT = [
     , 'SUN'
 ];
 
-export const DAYS_LONG = [
+/**
+ * @constant
+ */
+const DAYS_LONG = [
       'MONDAY'
     , 'TUESDAY'
     , 'WEDNESDAY'
@@ -21,7 +25,10 @@ export const DAYS_LONG = [
     , 'SUNDAY'
 ];
 
-export const CLASS_LIST = {
+/**
+ * @constant
+ */
+const CLASS_LIST = {
       0 : 'zero'
     , 1 : 'one'
     , 2 : 'two'
@@ -34,7 +41,10 @@ export const CLASS_LIST = {
     , 9 : 'nine'
 };
 
-export const WATCH_CONFIG = {
+/**
+ * @constant
+ */
+const WATCH_CONFIG = {
     format: 'MMM MMMM Do YY YYYY ddd dddd hh mm ss d A hh:mm:ss',
     keys: [
           'month_short'
@@ -56,3 +66,8 @@ export const WATCH_CONFIG = {
         , 'dots': ':'
     }
 };
+
+/**
+ * @exports
+ */
+export { WATCH_CONFIG, CLASS_LIST, DAYS_LONG, DAYS_SHORT };

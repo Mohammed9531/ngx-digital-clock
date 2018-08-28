@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DAYS_SHORT, DAYS_LONG } from './../../app.constants';
+import { DAYS_SHORT, DAYS_LONG } from './../../shared/constants/calendar.constants';
 
 @Component({
   selector: 'clock-day',
