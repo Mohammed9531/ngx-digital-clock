@@ -72,7 +72,7 @@ section, footer, header, aside{
 	padding: 40px 20px 20px;
 	border-radius:6px;
 	position:relative;
-	height: 54px;
+	height: 75px;
 }
 
 
@@ -156,6 +156,7 @@ section, footer, header, aside{
 	height:50px;
 	display:inline-block;
 	margin:0 4px;
+	left: 8px;
 }
 
 #clock .digits div span{
@@ -376,10 +377,7 @@ section, footer, header, aside{
 --------------------------*/
 
 
-#clock .ampm{
-	position:absolute;
-	bottom:20px;
-	right:20px;
+#clock .ampm {
 	font-size:12px;
 }
 
