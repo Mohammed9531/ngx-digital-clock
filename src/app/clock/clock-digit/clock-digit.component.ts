@@ -1,4 +1,4 @@
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription, timer } from 'rxjs';
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 @Component({
@@ -32,7 +32,7 @@ export class ClockDigitComponent implements OnInit {
     this.displayDots = false;
 
     this.subscriptions.push(
-      Observable.timer(0, 1000)
+      timer(0, 1000)
       .subscribe((t) => {
         this.displayDots = !this.displayDots;
       })

@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription, timer } from 'rxjs';
 import { DAYS_SHORT, DAYS_LONG, CLASS_LIST, WATCH_CONFIG } from './app.constants';
 
 @Component({
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.subscriptions.push(
-      Observable.timer(0, 1000)
+      timer(0, 1000)
       .subscribe((t) => {
         this.fetchDateTime();
       })
