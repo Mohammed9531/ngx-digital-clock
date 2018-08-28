@@ -1,6 +1,6 @@
 import * as moment from 'moment';
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription, timer } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DAYS_SHORT, DAYS_LONG, CLASS_LIST, WATCH_CONFIG } from './app.constants';
 
 @Component({
