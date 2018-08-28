@@ -1,5 +1,5 @@
 import { Subscription, timer } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { UtilService } from './../shared/services/util/util.service';
 import { DAYS_SHORT, CLASS_LIST } from './../shared/constants/calendar.constants';
 
@@ -19,6 +19,11 @@ export class DigitalClockComponent implements OnInit, OnDestroy {
   public today: string;
   /**
    * @public
+   * @type: string[]
+   */
+  public borders: string[];
+  /**
+   * @public
    * @type: string
    */
   public monthYear: string;
@@ -27,6 +32,12 @@ export class DigitalClockComponent implements OnInit, OnDestroy {
    * @type: string
    */
   public meridian: string;
+  /**
+   * @public
+   * @type: boolean
+   */
+  @Input()
+  public displayDots: boolean = false;
   /**
    * @public
    * @type: string[]
@@ -48,6 +59,7 @@ export class DigitalClockComponent implements OnInit, OnDestroy {
    * @param: {util<UtilService>}
    */
   constructor(private util: UtilService) {
+    this.borders = 'd1 d2 d3 d4 d5 d6 d7'.split(' ');
     this._init();
   }
 
@@ -103,6 +115,9 @@ export class DigitalClockComponent implements OnInit, OnDestroy {
     const d: string[] = (new Date())
       .toDateString()
       .split(' ');
+
+    // toggles the dots
+    this.displayDots = !this.displayDots;
 
     // sets the day today
     this.today = (d[0] || '').toUpperCase();

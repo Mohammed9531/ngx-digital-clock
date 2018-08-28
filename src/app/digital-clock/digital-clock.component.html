@@ -12,7 +12,12 @@
         </div>
         <div class="alarm"></div>
         <div class="digits">
-            <clock-digit *ngFor="let dName of timeFormatList" [digitName]="dName" [isDot]="dName === 'dots'"></clock-digit>
+            <ng-container *ngFor="let d of timeFormatList">
+                <div class="dots" *ngIf="d == 'dots'" [style.visibility]="!displayDots ? 'visible': 'hidden'"></div>
+                <div [attr.class]="d ? d: null" *ngIf="d != 'dots'">
+                    <span *ngFor="let border of borders" [attr.class]="border"></span>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
