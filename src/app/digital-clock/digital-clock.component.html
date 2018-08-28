@@ -1,12 +1,17 @@
 <div id="clock" class="light">
-  <div class="display">
-      <div class="weekdays">
-          <clock-day [today]="dateTimeObj?.day_numerical"></clock-day>
-      </div>
-      <div class="ampm"></div>
-      <div class="alarm"></div>
-      <div class="digits">
-          <clock-digit *ngFor="let dName of timeFormatList" [digitName]="dName" [isDot]="dName === 'dots'"></clock-digit>
-      </div>
-  </div>
+    <div class="display">
+        <div class="weekdays">
+            <!-- <clock-day [today]="dateTimeObj?.day_numerical"></clock-day> -->
+            <ul class="weekdays-block">
+                <li class="day-block" *ngFor="let day of days" [class.active]="today == day">{{day}}</li>
+            </ul>
+        </div>
+        <div class="ampm">
+            {{meridian}}
+        </div>
+        <div class="alarm"></div>
+        <div class="digits">
+            <clock-digit *ngFor="let dName of timeFormatList" [digitName]="dName" [isDot]="dName === 'dots'"></clock-digit>
+        </div>
+    </div>
 </div>

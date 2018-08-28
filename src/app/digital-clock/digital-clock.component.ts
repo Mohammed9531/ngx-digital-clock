@@ -14,6 +14,21 @@ import { DAYS_SHORT, CLASS_LIST } from './../shared/constants/calendar.constants
 export class DigitalClockComponent implements OnInit, OnDestroy {
   /**
    * @public
+   * @type: string
+   */
+  public today: string;
+  /**
+   * @public
+   * @type: string
+   */
+  public monthYear: string;
+  /**
+   * @public
+   * @type: string
+   */
+  public meridian: string;
+  /**
+   * @public
    * @type: string[]
    */
   public days: string[] = DAYS_SHORT;
@@ -59,7 +74,6 @@ export class DigitalClockComponent implements OnInit, OnDestroy {
    */
   private _init(): void {
     const now: Date = new Date();
-    const d: string[] = now.toDateString().split(' ');
     const t: string[] = now.toLocaleTimeString().split(' ');
 
     if (Array.isArray(t) && t[0]) {
@@ -73,7 +87,31 @@ export class DigitalClockComponent implements OnInit, OnDestroy {
       for (const i of digits) {
         this.timeFormatList.push(CLASS_LIST[i]);
       }
+
+      // run the other options.
+      this._run(t[1]);
     }
+  }
+
+  /**
+   * @private
+   * @return: void
+   * @description: a helper method that initializes
+   * the calendar.
+   */
+  private _run(_meridian: string): void {
+    const d: string[] = (new Date())
+      .toDateString()
+      .split(' ');
+
+    // sets the day today
+    this.today = (d[0] || '').toUpperCase();
+
+    // sets the month & year
+    this.monthYear = `${d[1]} ${d[2]}, ${d[3]}`;
+
+    // sets am/pm
+    this.meridian = (_meridian || '').toUpperCase();
   }
 
   /**
