@@ -145,7 +145,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"clock\" class=\"light\">\n    <div class=\"display clock-display\">\n        <div class=\"weekdays\">\n            <ul class=\"clock-weekdays-block\">\n                <li class=\"day-block\" *ngFor=\"let day of days\" [class.active]=\"today == day\">{{day}}</li>\n            </ul>\n        </div>\n        <div class=\"ampm\">\n            <ul class=\"clock-meridian-block\">\n                <li class=\"clock-meridian\" *ngFor=\"let m of ['AM', 'PM']\" [class.active]=\"meridian == m\">{{m}}</li>\n            </ul>\n        </div>\n        <div class=\"alarm\"></div>\n        <div class=\"digits\">\n            <ng-container *ngFor=\"let d of timeFormatList\">\n                <div class=\"dots\" *ngIf=\"d == 'dots'\" [style.visibility]=\"!displayDots ? 'visible': 'hidden'\"></div>\n                <div [attr.class]=\"d ? d: null\" *ngIf=\"d != 'dots'\">\n                    <span *ngFor=\"let border of borders\" [attr.class]=\"border\"></span>\n                </div>\n            </ng-container>\n        </div>\n    </div>\n</div>"
+module.exports = "<div id=\"clock\" class=\"light\">\n    <div class=\"display clock-display\">\n        <div class=\"weekdays\">\n            <ul class=\"clock-weekdays-block\">\n                <li class=\"day-block\" *ngFor=\"let day of days\" [class.active]=\"today == day\">{{day}}</li>\n            </ul>\n        </div>\n        <div class=\"alarm\"></div>\n        <div class=\"digits\">\n            <ng-container *ngFor=\"let d of timeFormatList\">\n                <div class=\"dots\" *ngIf=\"d == 'dots'\" [style.visibility]=\"!displayDots ? 'visible': 'hidden'\"></div>\n                <div [attr.class]=\"d ? d: null\" *ngIf=\"d != 'dots'\">\n                    <span *ngFor=\"let border of borders\" [attr.class]=\"border\"></span>\n                </div>\n            </ng-container>\n            <div class=\"ampm\">\n                <ul class=\"clock-meridian-block\">\n                    <li class=\"clock-meridian\" *ngFor=\"let m of ['AM', 'PM']\" [class.active]=\"meridian == m\">{{m}}</li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"clock-date\">\n            <div class=\"small\">{{monthYear}}</div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -156,7 +156,7 @@ module.exports = "<div id=\"clock\" class=\"light\">\n    <div class=\"display c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".clock-display .clock-meridian,\n.clock-display .clock-weekdays-block .day-block {\n  opacity: 0.3;\n  list-style-type: none; }\n  .clock-display .clock-meridian.active,\n  .clock-display .clock-weekdays-block .day-block.active {\n    opacity: 1;\n    font-weight: bold; }\n  .clock-display .clock-weekdays-block > .day-block {\n  padding: 0 10px;\n  display: inline-block; }\n"
+module.exports = ".clock-display .clock-meridian,\n.clock-display .clock-weekdays-block .day-block {\n  opacity: 0.3;\n  list-style-type: none; }\n  .clock-display .clock-meridian.active,\n  .clock-display .clock-weekdays-block .day-block.active {\n    opacity: 1;\n    font-weight: bold; }\n  .clock-display .clock-weekdays-block > .day-block {\n  padding: 0 10px;\n  display: inline-block; }\n  .clock-display .small {\n  font-family: cursive;\n  font-size: 10px !important; }\n"
 
 /***/ }),
 
