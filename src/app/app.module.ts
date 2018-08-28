@@ -1,3 +1,4 @@
+import { UtilService } from './shared/services/util/util.service';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +27,7 @@ import { DigitalClockComponent } from './digital-clock/digital-clock.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

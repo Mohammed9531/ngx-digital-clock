@@ -1,7 +1,7 @@
-import * as moment from 'moment';
-import { Observable, Subscription, timer } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DAYS_SHORT, DAYS_LONG, CLASS_LIST, WATCH_CONFIG } from './../shared/constants/calendar.constants';
+import { UtilService } from './../shared/services/util/util.service';
+import { DAYS_SHORT, CLASS_LIST } from './../shared/constants/calendar.constants';
 
 /**
  * @author: Shoukath Mohammed
@@ -12,54 +12,76 @@ import { DAYS_SHORT, DAYS_LONG, CLASS_LIST, WATCH_CONFIG } from './../shared/con
   styleUrls: ['./digital-clock.component.scss']
 })
 export class DigitalClockComponent implements OnInit, OnDestroy {
-  public dateTimeObj: any = {};
+  /**
+   * @public
+   * @type: string[]
+   */
   public days: string[] = DAYS_SHORT;
+  /**
+   * @public
+   * @type: string[]
+   */
   public timeFormatList: string[] = [];
+  /**
+   * @public
+   * @type: Subscription[]
+   */
   public subscriptions: Subscription[] = [];
 
-  constructor() {
-    this.fetchDateTime();
+  /**
+   * @constructor
+   * @param: {util<UtilService>}
+   */
+  constructor(private util: UtilService) {
+    this._init();
   }
 
+  /**
+   * @public
+   * @type: method<life cycle hook>
+   * @return: void
+   * @description: N/A
+   */
   public ngOnInit(): void {
     this.subscriptions.push(
       timer(0, 1000)
         .subscribe((t) => {
-          this.fetchDateTime();
+          this._init();
         })
     );
   }
 
-  public fetchDateTime(): void {
-    let now: string[] = moment().format(WATCH_CONFIG.format).split(' ');
+  /**
+   * @private
+   * @return: void
+   * @description: a helper method that initializes
+   * the digital clock.
+   */
+  private _init(): void {
+    const now: Date = new Date();
+    const d: string[] = now.toDateString().split(' ');
+    const t: string[] = now.toLocaleTimeString().split(' ');
 
-    this.dateTimeObj = {};
-    for (let i = 0; i < now.length; i++) {
-      this.dateTimeObj[WATCH_CONFIG.keys[i]] = now[i];
-    }
-    this.constructWatch();
+    if (Array.isArray(t) && t[0]) {
+      let digits: any = t[0]
+        .split(':')
+        .map(v => this.util.to2Digit(v))
+        .join(':')
+        .split('');
 
-    // const now: Date = new Date();
-    // const d: string[] = now.toDateString().split(' ');
-    // const t: string[] = now.toLocaleTimeString().split(' ');
-  }
-
-  public constructWatch(): void {
-    const rawStr: string = this.dateTimeObj.time;
-
-    this.timeFormatList = [];
-    for (let i = 0; i < rawStr.length; i++) {
-      if (rawStr[i] === WATCH_CONFIG.parsers.dots) {
-        this.timeFormatList.push(WATCH_CONFIG.parsers[rawStr[i]]);
-      } else {
-        this.timeFormatList.push(CLASS_LIST[+rawStr[i]]);
+      this.timeFormatList = [];
+      for (const i of digits) {
+        this.timeFormatList.push(CLASS_LIST[i]);
       }
     }
-    console.log(this.dateTimeObj);
   }
 
-
-
+  /**
+   * @public
+   * @type: method<life cycle hook>
+   * @return: void
+   * @description: N/A
+   */
   public ngOnDestroy(): void {
     for (let subscription of this.subscriptions) {
       if (!!subscription) {

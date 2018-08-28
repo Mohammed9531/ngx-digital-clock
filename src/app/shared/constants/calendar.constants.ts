@@ -39,6 +39,8 @@ const CLASS_LIST = {
     , 7 : 'seven'
     , 8 : 'eight'
     , 9 : 'nine'
+    , ':' : 'dots'
+    , 'dots': ':'
 };
 
 /**
