@@ -9,6 +9,7 @@ import { ClockDayComponent } from './clock/clock-day/clock-day.component';
 import { ClockDateComponent } from './clock/clock-date/clock-date.component';
 import { ClockDigitComponent } from './clock/clock-digit/clock-digit.component';
 import { ClockPeriodComponent } from './clock/clock-period/clock-period.component';
+import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ClockPeriodComponent } from './clock/clock-period/clock-period.componen
     ClockDayComponent,
     ClockDateComponent,
     ClockDigitComponent,
-    ClockPeriodComponent
+    ClockPeriodComponent,
+    DigitalClockComponent
   ],
   imports: [
     BrowserModule,
