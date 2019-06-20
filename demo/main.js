@@ -330,7 +330,7 @@ var DAYS_SHORT = [
     'MON',
     'TUE',
     'WED',
-    'THUR',
+    'THU',
     'FRI',
     'SAT',
     'SUN'
